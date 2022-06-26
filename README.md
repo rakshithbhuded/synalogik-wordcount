@@ -6,13 +6,21 @@ An API to read the contents of a plain text file and enable the display of the
 total number of words, the average word length, the most frequently occurring word length, and a
 list of the number of words of each length.
 
-### Requirements
+_____________________________________________________________________________________________________________________________________________________________
+
+### Requirements:
 
 For building and running the application you need:
 
 * [JDK 11](https://www.oracle.com/uk/java/technologies/javase/jdk11-archive-downloads.html)
 * [Maven 3](https://maven.apache.org/)
 * [Lombok Plugin](https://plugins.jetbrains.com/plugin/6317-lombok)
+
+_____________________________________________________________________________________________________________________________________________________________
+
+### Application has been deployed in Microsoft Azure App Service: [Actuator Health End-Point](https://app-synalogik-wordcount.azurewebsites.net/synalogik/v1/actuator/health)
+
+_____________________________________________________________________________________________________________________________________________________________
 
 ## Running the application locally:
 
@@ -28,35 +36,39 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-Request Format:
+_____________________________________________________________________________________________________________________________________________________________
 
-```bash
+#### Request Format ( New request using Insomnia or Postman ):
+
+```text
 HTTP Method = POST
-Request URI = /word-count
 Headers = [Content-Type:"multipart/form-data"]
 Body = Multipart Form, Input = fileName, Value = Browse and select a file
 ```
+
+_____________________________________________________________________________________________________________________________________________________________
 
 #### Swagger Details: [Swagger End-Point](http://localhost:8080/synalogik/v1/swagger-ui.html)
 
 _____________________________________________________________________________________________________________________________________________________________
 
-##### API End Point details (Local Profile):
+##### API End Point details:
 
-Operation|API End Point|Details
---------------|--------------|--------------------
-GET|http://localhost:8080/synalogik/v1/actuator|Actuator
-GET|http://localhost:8080/synalogik/v1/actuator/health|Actuator Health
-GET|http://localhost:8080/synalogik/v1/actuator/metrics|Actuator Metrics
-GET|http://localhost:8080/synalogik/v1/actuator/env|Actuator Environment
-POST| http://localhost:8080/synalogik/v1/word-count|Word-Count
+| Operation |                               API End Point                               |       Details        |
+|:---------:|:-------------------------------------------------------------------------:|:--------------------:|
+|   POST    |               http://localhost:8080/synalogik/v1/word-count               |      Word-Count      |
+|   POST    | https://app-synalogik-wordcount.azurewebsites.net/synalogik/v1/word-count |   Azure End-Point    |
+|    GET    |                http://localhost:8080/synalogik/v1/actuator                |       Actuator       |
+|    GET    |            http://localhost:8080/synalogik/v1/actuator/health             |   Actuator Health    |
+|    GET    |            http://localhost:8080/synalogik/v1/actuator/metrics            |   Actuator Metrics   |
+|    GET    |              http://localhost:8080/synalogik/v1/actuator/env              | Actuator Environment |
 
 _____________________________________________________________________________________________________________________________________________________________
 
 #### Note:
 
-* Unit tests has been written for Controller and Service classes
-* Formatted numbers input has been considered and handled in the code
-* Swagger end-point can be used to test the application
-* ASCII value of the characters is not validated. The application is modeled to work with all kind of special
+* Unit & Integration tests - 90% Code Coverage
+* Swagger end-point can be used to interact with the Application
+* Code has been deployed in Microsoft Azure web-apps (Instance size is small)
+* ASCII value of the characters in the input file is not validated. The application is modeled to work with all special
   characters.
