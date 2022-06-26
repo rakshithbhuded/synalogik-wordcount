@@ -18,7 +18,7 @@ For building and running the application you need:
 
 _____________________________________________________________________________________________________________________________________________________________
 
-### Application has been deployed in Microsoft Azure App Service: [Actuator Health End-Point](https://app-synalogik-wordcount.azurewebsites.net/synalogik/v1/actuator/health)
+### Application has been deployed in <span style="color: green"> Microsoft Azure App</span>: [Actuator Health End-Point](https://app-synalogik-wordcount.azurewebsites.net/synalogik/v1/actuator/health)
 
 _____________________________________________________________________________________________________________________________________________________________
 
