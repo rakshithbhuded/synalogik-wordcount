@@ -1,0 +1,34 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /synalogik/v1
+
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  profiles:
+    active: local
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, env
+  
+  #logging level
+logging:
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+    com:
+      synalogik: DEBUG
+  #To Enable Console formatting, uncomment below property.
+  #logging.pattern.console=%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+
