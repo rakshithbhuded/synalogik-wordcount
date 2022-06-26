@@ -70,5 +70,5 @@ ________________________________________________________________________________
 * Swagger end-point can be used to interact with the Application
 * Code has been deployed in Microsoft Azure web-apps (Instance size is small)
 * ASCII value of the characters in the input file is not validated. The application is modeled to work with all special
-  characters.
-* Unit & Integration tests has been added.
+  characters
+* Unit & Integration tests has been added
