@@ -1,4 +1,4 @@
-package com.synalogik.wordcount.controller;
+package com.synalogik.wordcount.integration;
 
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.DisplayName;
@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @EnableAutoConfiguration
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
-public class WordCountControllerIntegrationTest {
+public class WordCountIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
